@@ -1,0 +1,11 @@
+<div *ngFor="let group of groupByType() | keyvalue" class="container_one">
+  <h2>{{group.key}}</h2>
+  <div *ngFor="let weapons of groupBySubtype(group.value) | keyvalue" class="container_two">
+    <h3>{{weapons.key}}</h3>
+    <ul>
+      <li *ngFor="let weapon of weapons.value">
+          <a routerLink="weapon/{{weapon.id}}">{{weapon.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
